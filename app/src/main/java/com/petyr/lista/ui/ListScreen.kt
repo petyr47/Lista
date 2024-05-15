@@ -28,10 +28,7 @@ fun ListScreen(
 fun ListPreview() {
     ListScreen(
         items = remember {
-            listOf(
-                UIItem(),
-                UIItem(),
-            )
+            UIItem.getDummyList()
         }, modifier = Modifier.padding(8.dp)
     )
 }
