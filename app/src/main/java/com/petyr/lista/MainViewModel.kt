@@ -7,7 +7,5 @@ import kotlinx.coroutines.flow.flowOf
 
 class MainViewModel : ViewModel() {
 
-    val items : Flow<List<UIItem>> = flowOf(listOf(UIItem(), UIItem(), UIItem(),))
-
-
+    val items : Flow<List<UIItem>> = flowOf(UIItem.getDummyList())
 }
