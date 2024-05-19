@@ -3,6 +3,8 @@ package com.petyr.lista.ui
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -14,11 +16,15 @@ fun ListScreen(
     items: List<UIItem>,
     modifier: Modifier,
 ) {
+    val string: MutableState<String> = remember { mutableStateOf("") }
     LazyColumn(
         modifier = modifier
     ) {
         items(items.size) { index ->
-            Item(item = items[index])
+            Item(
+                string = string,
+                item = items[index]
+            )
         }
     }
 }
